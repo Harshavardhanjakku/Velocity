@@ -7,14 +7,12 @@
  */
 
 const Api = (() => {
-  // Change this if the backend runs on a different host/port.
-  // On file:// pages (opened by double-clicking index.html) there is no
-  // hostname to derive an address from, so fall back to localhost:5000.
-  const BASE_URL =
-    window.BIKE_API_BASE_URL ||
-    (window.location.protocol.startsWith("http")
-      ? `${window.location.protocol}//${window.location.hostname}:5000`
-      : "http://localhost:5000");
+  // Same-origin by default: app.py serves both the frontend and the API
+  // together (locally on :5000, and on Render over standard HTTPS), so no
+  // host/port guessing is needed. Only set window.BIKE_API_BASE_URL if you
+  // are deliberately serving the frontend from a separate static server on
+  // a different origin than the Flask API.
+  const BASE_URL = window.BIKE_API_BASE_URL || "";
 
   const DEFAULT_TIMEOUT = 12000;
   const DEFAULT_RETRIES = 2;
