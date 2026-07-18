@@ -12,7 +12,7 @@ venv/
 .venv/
 env/
 ENV/
-backend/venv/
+venv/
 frontend/venv/
 
 # ===========================
@@ -34,15 +34,15 @@ frontend/venv/
 # ===========================
 *.log
 logs/
-backend/app.log
+app.log
 
 # ===========================
 # Runtime Files
 # ===========================
-backend/prediction_history.json
+prediction_history.json
 
 # Ignore only if generated automatically
-backend/metrics.json
+metrics.json
 
 # ===========================
 # Python Cache
