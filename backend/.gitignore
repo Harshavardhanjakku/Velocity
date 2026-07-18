@@ -41,8 +41,6 @@ app.log
 # ===========================
 prediction_history.json
 
-# Ignore only if generated automatically
-metrics.json
 
 # ===========================
 # Python Cache
