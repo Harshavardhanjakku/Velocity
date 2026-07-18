@@ -1,0 +1,95 @@
+/* ==========================================================================
+   animations.css — Keyframes + reusable animation utilities
+   ========================================================================== */
+
+@keyframes spin { to { transform: rotate(360deg); } }
+
+@keyframes meshDrift {
+  0%   { transform: translate(0, 0) rotate(0deg) scale(1); }
+  50%  { transform: translate(-3%, 4%) rotate(6deg) scale(1.08); }
+  100% { transform: translate(3%, -3%) rotate(-4deg) scale(1.02); }
+}
+
+@keyframes rippleAnim {
+  to { transform: scale(3); opacity: 0; }
+}
+
+@keyframes scrollDot {
+  0%   { transform: translateY(0); opacity: 1; }
+  70%  { transform: translateY(14px); opacity: 0; }
+  100% { transform: translateY(14px); opacity: 0; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes floatY {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-14px); }
+}
+
+@keyframes pulseGlow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.35); }
+  50%      { box-shadow: 0 0 0 10px rgba(59, 130, 246, 0); }
+}
+
+@keyframes skeletonShine {
+  0%   { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+@keyframes toastIn {
+  from { opacity: 0; transform: translateX(40px) scale(0.96); }
+  to   { opacity: 1; transform: translateX(0) scale(1); }
+}
+
+@keyframes toastOut {
+  to { opacity: 0; transform: translateX(40px) scale(0.96); }
+}
+
+@keyframes dashDraw {
+  from { stroke-dashoffset: var(--dash-length, 1000); }
+  to   { stroke-dashoffset: 0; }
+}
+
+@keyframes bikeRide {
+  0%   { offset-distance: 0%; }
+  100% { offset-distance: 100%; }
+}
+
+@keyframes shine {
+  0%   { transform: translateX(-120%) skewX(-15deg); }
+  100% { transform: translateX(220%) skewX(-15deg); }
+}
+
+.anim-fade-in { animation: fadeIn var(--dur-slow) var(--ease-out) both; }
+.anim-slide-up { animation: slideUp var(--dur-slow) var(--ease-out) both; }
+.anim-float { animation: floatY 5s ease-in-out infinite; }
+.anim-delay-1 { animation-delay: 100ms; }
+.anim-delay-2 { animation-delay: 220ms; }
+.anim-delay-3 { animation-delay: 340ms; }
+
+.tilt-card { transform-style: preserve-3d; will-change: transform; }
+
+.glass-shine {
+  position: relative;
+  overflow: hidden;
+}
+.glass-shine::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 40%;
+  height: 100%;
+  background: linear-gradient(120deg, transparent, rgba(255,255,255,0.10), transparent);
+  transform: translateX(-120%) skewX(-15deg);
+}
+.glass-shine:hover::after { animation: shine 900ms ease-out; }

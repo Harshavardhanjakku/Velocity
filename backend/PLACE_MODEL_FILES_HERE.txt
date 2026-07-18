@@ -1,0 +1,34 @@
+PLACE YOUR TRAINED ARTIFACTS IN THIS FOLDER
+============================================
+
+This backend loads three files that YOUR training script already produced.
+Nothing in this project retrains or modifies them — they are loaded as-is.
+
+Copy these three files into this `backend/` directory, next to app.py:
+
+    bike_rental_model.pth
+    scaler.pkl
+    feature_columns.pkl
+
+Optional (recommended): also add a metrics.json file so the "Model Performance"
+panel on the dashboard shows real RMSE / MAE / R2 / accuracy instead of a
+"not available" notice. Right after your evaluation step, add:
+
+    import json
+    json.dump(
+        {
+            "rmse": rmse.item(),
+            "mae": mae.item(),
+            "r2": r2,
+            "accuracy": accuracy,
+        },
+        open("backend/metrics.json", "w"),
+    )
+
+Once the files are in place, start the server:
+
+    cd backend
+    pip install -r requirements.txt --break-system-packages   # if needed
+    python app.py
+
+Then open http://localhost:5000 in your browser.

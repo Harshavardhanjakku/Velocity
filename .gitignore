@@ -1,0 +1,103 @@
+# ===========================
+# Python
+# ===========================
+__pycache__/
+*.py[cod]
+*$py.class
+
+# ===========================
+# Virtual Environments
+# ===========================
+venv/
+.venv/
+env/
+ENV/
+backend/venv/
+frontend/venv/
+
+# ===========================
+# IDEs
+# ===========================
+.vscode/
+.idea/
+*.code-workspace
+
+# ===========================
+# Environment Variables
+# ===========================
+.env
+.env.*
+!.env.example
+
+# ===========================
+# Logs
+# ===========================
+*.log
+logs/
+backend/app.log
+
+# ===========================
+# Runtime Files
+# ===========================
+backend/prediction_history.json
+
+# Ignore only if generated automatically
+backend/metrics.json
+
+# ===========================
+# Python Cache
+# ===========================
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.pyre/
+.cache/
+.coverage
+.coverage.*
+htmlcov/
+
+# ===========================
+# Jupyter
+# ===========================
+.ipynb_checkpoints/
+
+# ===========================
+# Build
+# ===========================
+build/
+dist/
+*.egg-info/
+.eggs/
+pip-wheel-metadata/
+
+# ===========================
+# Temporary Files
+# ===========================
+*.tmp
+*.temp
+*.bak
+*.swp
+*.swo
+*~
+
+# ===========================
+# Databases
+# ===========================
+*.db
+*.sqlite3
+
+# ===========================
+# Node
+# ===========================
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# ===========================
+# OS Files
+# ===========================
+.DS_Store
+Thumbs.db
+Desktop.ini

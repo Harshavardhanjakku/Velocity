@@ -1,0 +1,145 @@
+/* ==========================================================================
+   variables.css — Design Tokens
+   Single source of truth for color, type, spacing, radius and shadow scales.
+   Every other stylesheet consumes these custom properties only.
+   ========================================================================== */
+
+:root {
+  /* ---------- Brand / accent palette (fixed across themes) ---------- */
+  --accent-blue: #3B82F6;
+  --accent-purple: #8B5CF6;
+  --accent-cyan: #06B6D4;
+  --accent-green: #22C55E;
+  --accent-amber: #F59E0B;
+  --accent-red: #EF4444;
+
+  --accent-gradient: linear-gradient(135deg, var(--accent-blue) 0%, var(--accent-purple) 50%, var(--accent-cyan) 100%);
+  --accent-gradient-soft: linear-gradient(135deg, rgba(59,130,246,0.18) 0%, rgba(139,92,246,0.18) 50%, rgba(6,182,212,0.18) 100%);
+
+  /* ---------- Typography ---------- */
+  --font-display: 'Poppins', 'Manrope', sans-serif;
+  --font-body: 'Inter', 'Manrope', sans-serif;
+  --font-mono: 'JetBrains Mono', 'Consolas', monospace;
+
+  --fs-2xs: 0.6875rem;
+  --fs-xs: 0.75rem;
+  --fs-sm: 0.875rem;
+  --fs-base: 1rem;
+  --fs-md: 1.125rem;
+  --fs-lg: 1.375rem;
+  --fs-xl: 1.75rem;
+  --fs-2xl: 2.25rem;
+  --fs-3xl: 3rem;
+  --fs-4xl: 4rem;
+
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+  --fw-extrabold: 800;
+
+  /* ---------- Spacing scale ---------- */
+  --sp-1: 0.25rem;
+  --sp-2: 0.5rem;
+  --sp-3: 0.75rem;
+  --sp-4: 1rem;
+  --sp-5: 1.5rem;
+  --sp-6: 2rem;
+  --sp-7: 3rem;
+  --sp-8: 4rem;
+  --sp-9: 6rem;
+
+  /* ---------- Radius ---------- */
+  --radius-sm: 10px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-xl: 32px;
+  --radius-full: 999px;
+
+  /* ---------- Motion ---------- */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --dur-fast: 150ms;
+  --dur-med: 320ms;
+  --dur-slow: 600ms;
+
+  /* ---------- Layout ---------- */
+  --nav-height: 76px;
+  --container-max: 1360px;
+  --z-nav: 100;
+  --z-cursor: 200;
+  --z-loader: 500;
+  --z-modal: 400;
+  --z-toast: 450;
+}
+
+/* ==========================================================================
+   Dark theme (default)
+   ========================================================================== */
+:root,
+[data-theme="dark"] {
+  --bg-base: #09090B;
+  --bg-raised: #111827;
+  --bg-surface: #18181B;
+  --bg-elevated: #27272A;
+
+  --glass-bg: rgba(24, 24, 27, 0.55);
+  --glass-bg-strong: rgba(17, 24, 39, 0.72);
+  --glass-border: rgba(255, 255, 255, 0.09);
+  --glass-highlight: rgba(255, 255, 255, 0.06);
+
+  --text-primary: #F4F4F5;
+  --text-secondary: #A1A1AA;
+  --text-tertiary: #71717A;
+  --text-on-accent: #ffffff;
+
+  --border-subtle: rgba(255, 255, 255, 0.08);
+  --border-strong: rgba(255, 255, 255, 0.16);
+
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.35);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.45);
+  --shadow-lg: 0 20px 60px rgba(0, 0, 0, 0.55);
+  --shadow-glow-blue: 0 0 32px rgba(59, 130, 246, 0.35);
+  --shadow-glow-purple: 0 0 32px rgba(139, 92, 246, 0.35);
+
+  --neu-light: rgba(255, 255, 255, 0.04);
+  --neu-dark: rgba(0, 0, 0, 0.55);
+
+  --scrollbar-track: #111827;
+  --scrollbar-thumb: #3f3f46;
+}
+
+/* ==========================================================================
+   Light theme
+   ========================================================================== */
+[data-theme="light"] {
+  --bg-base: #F4F6FB;
+  --bg-raised: #FFFFFF;
+  --bg-surface: #FFFFFF;
+  --bg-elevated: #EEF1F8;
+
+  --glass-bg: rgba(255, 255, 255, 0.65);
+  --glass-bg-strong: rgba(255, 255, 255, 0.85);
+  --glass-border: rgba(15, 23, 42, 0.08);
+  --glass-highlight: rgba(255, 255, 255, 0.9);
+
+  --text-primary: #16181D;
+  --text-secondary: #4B5262;
+  --text-tertiary: #7A8194;
+  --text-on-accent: #ffffff;
+
+  --border-subtle: rgba(15, 23, 42, 0.08);
+  --border-strong: rgba(15, 23, 42, 0.14);
+
+  --shadow-sm: 0 2px 8px rgba(15, 23, 42, 0.06);
+  --shadow-md: 0 8px 24px rgba(15, 23, 42, 0.10);
+  --shadow-lg: 0 20px 60px rgba(15, 23, 42, 0.14);
+  --shadow-glow-blue: 0 0 32px rgba(59, 130, 246, 0.22);
+  --shadow-glow-purple: 0 0 32px rgba(139, 92, 246, 0.22);
+
+  --neu-light: rgba(255, 255, 255, 0.9);
+  --neu-dark: rgba(15, 23, 42, 0.10);
+
+  --scrollbar-track: #E4E8F2;
+  --scrollbar-thumb: #C7CEDD;
+}
